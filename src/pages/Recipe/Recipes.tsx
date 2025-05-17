@@ -67,6 +67,61 @@ const Recipes = () => {
         instructions: ["떡을 끓인다", "계란을 넣고 마무리"],
         advantage: ["든든한 국물", "명절 분위기"],
       },
+      {
+        recipeId: 6,
+        name: "김치볶음밥",
+        image: tomatopasta, // 임시 이미지
+        mainIng: "김치, 밥, 참치, 계란",
+        heart: false,
+        instructions: [
+          "김치를 볶는다.",
+          "밥과 참치를 넣고 섞는다.",
+          "계란 프라이를 곁들인다.",
+        ],
+        advantage: ["재료 소진에 좋아요", "한 그릇 요리", "참치 재활용 가능"],
+      },
+      {
+        recipeId: 7,
+        name: "계란 토마토볶음",
+        image: tomatopasta, // 임시 이미지
+        mainIng: "토마토, 계란, 대파",
+        heart: false,
+        instructions: [
+          "토마토와 대파를 볶는다.",
+          "계란을 풀어 넣고 재빨리 볶는다.",
+          "소금 간을 한다.",
+        ],
+        advantage: ["간단한 중국식 가정식", "토마토 재활용", "조리시간 짧음"],
+      },
+      {
+        recipeId: 8,
+        name: "두부 된장덮밥",
+        image: tomatopasta, // 임시 이미지
+        mainIng: "두부, 된장, 양파",
+        heart: false,
+        instructions: [
+          "두부와 양파를 볶는다.",
+          "된장을 푼 물을 넣고 끓인다.",
+          "밥 위에 덮어 먹는다.",
+        ],
+        advantage: ["국 없이 덮밥 완성", "된장 재활용", "고단백 저칼로리"],
+      },
+      {
+        recipeId: 9,
+        name: "토마토 달걀국",
+        image: tomatopasta, // 임시 이미지
+        mainIng: "토마토, 계란, 대파",
+        heart: false,
+        instructions: [
+          "토마토를 썰어 기름에 살짝 볶는다.",
+          "물과 대파를 넣고 끓인다.",
+          "계란을 풀어 넣고 젓지 않고 익힌다.",
+          "간을 맞춘다.",
+        ],
+        advantage: ["속이 편한 국", "재료 간단", "10분 완성"],
+      }
+
+
     ];
   
     setList(mockRecipes);
