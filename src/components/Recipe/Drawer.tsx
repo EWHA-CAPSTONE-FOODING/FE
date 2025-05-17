@@ -1,3 +1,24 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import LongBtn from "@components/Buttons/LongBtn";
 import List from "@components/Ingredients/List/List";
 import { FontBold, FontMedium } from "@style/font.style";

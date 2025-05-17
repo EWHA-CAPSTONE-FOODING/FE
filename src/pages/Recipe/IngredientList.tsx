@@ -12,11 +12,11 @@ const IngredientList = () => {
 
   // ✅ 화면 표시용 mock 리스트
   const mockIngredients: TypeIngredient[] = [
-    { ingredientId: 1, name: "링귀니 파스타 1인분(120g)", amount: 1, price: 7300, iconId: 1 },
-    { ingredientId: 2, name: "양파", amount: 0.5, price: 3500, iconId: 2 },
-    { ingredientId: 3, name: "올리브", amount: 15, price: 10400, iconId: 3 },
-    { ingredientId: 4, name: "파마산치즈", amount: 1, price: 7500, iconId: 4 },
-    { ingredientId: 5, name: "토마토홀 1캔(400g)", amount: 1, price: 5140, iconId: 5 },
+    { ingredientId: 1, name: "링귀니 파스타", amount: 1, price: 7300, iconId: 21 },
+    { ingredientId: 2, name: "양파", amount: 1, price: 3300, iconId: 3 },
+    { ingredientId: 3, name: "올리브", amount: 15, price: 10400, iconId: 17 },
+    { ingredientId: 4, name: "양송이 버섯", amount: 1, price: 0, iconId: 10 },
+    { ingredientId: 5, name: "한살림 스파게티소스", amount: 1, price: 0, iconId: 16 },
   ];
 
   const [ingredientList, setIngredientList] = useState<TypeIngredient[]>([]);

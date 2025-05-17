@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "@components/Header/Header";
 import NavBar from "@components/NavBar/NavBar";
 import calendarIcon from "@assets/main/calendar.png";
+import purchase1 from "@assets/main/calendar1.png";
 
 const Main = () => {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ const Main = () => {
         <Header isBack={false} title="p4" />
       </HeaderWrapper>
       <MainContent>
-        <img src={calendarIcon} alt="calendar icon" />
+        <img src={purchase1} alt="calendar icon" />
       </MainContent>
       <NavBarWrapper>
         <NavBar />

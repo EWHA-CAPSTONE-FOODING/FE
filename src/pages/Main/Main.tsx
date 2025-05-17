@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
@@ -25,7 +26,7 @@ const Main = () => {
   return (
     <Container>
       <HeaderWrapper>
-        <Header isBack={false} title={`p${currentPage + 1}`} />
+        <Header isBack={false} title=" " />
       </HeaderWrapper>
 
       <MainContent>
@@ -58,26 +59,23 @@ const Container = styled.div`
 
 const HeaderWrapper = styled.div`
   width: 100%;
-  padding-top: 16px; /* 로고 상단 여백 추가 */
+  padding-top: 16px; 
 `;
 
 const MainContent = styled.div`
   flex: 1;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   align-items: flex-start;
   padding: 20px;
-  padding-top: 10px;
+  padding-top: 0px;
 
   img {
-    /* width: 200px; */
-    /* height: auto; */
+
     width: 105%;
-    max-width: 375px; /* 모바일 화면 크기 기준 */
+    max-width: 375px; 
     height: auto;
-    border-radius: 5px; /* 원한다면 둥글게 */
-    //box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 살짝 입체감 추가 */
+    border-radius: 5px; 
   }
 `;
 
@@ -516,214 +514,4 @@ const ChatBtnWrapper = styled.div`
   bottom: 90px;
   left: 20px;
 `;
-
-
-
-
-
-
-
-
-
-/* import List from "@components/Ingredients/List/List";
-import styled from "styled-components";
-import pencil from "@assets/main/pencil.png";
-import NavBar from "@components/NavBar/NavBar";
-import CreateBtn from "@components/Buttons/CreateBtn";
-import UnderLinedBtn from "@components/Buttons/UnderLinedBtn";
-import { useNavigate } from "react-router-dom";
-import Header from "@components/Header/Header";
-import { useEffect, useState } from "react";
-import { getIngredients } from "@services/api/ingredients";
-import { useRecoilState } from "recoil";
-import { myListState } from "@services/store/ingredients";
-import ChatbotBtn from "@components/Chat/ChatbotBtn";
-
-const Main = () => {
-  const navigate = useNavigate();
-  const [myList, setMyList] = useRecoilState(myListState);
-  const [list, setList] = useState();
-  const [selectedDate, setSelectedDate] = useState<Date>(new Date());
-
-  useEffect(() => {
-    getIngredients()
-      .then((res) => {
-        setMyList(res.data);
-        setList(res.data);
-      })
-      .catch((err) => console.log("err"));
-  }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    navigate("/greeting");
-  };
-
-  const handleDateClick = (date: Date) => {
-    setSelectedDate(date);
-    navigate("/reportmenu", { state: { selectedDate: date.toDateString() } }); // 선택된 날짜를 state에 담아서 페이지 이동
-  };
-
-  const getLast7Days = () => {
-    const today = new Date();
-    return [...Array(7)].map((_, i) => {
-      const d = new Date();
-      d.setDate(today.getDate() - (6 - i)); // 📌 요일 순서: 일 → 월 → 화 → 수 → 목 → 금 → 토
-      return d;
-    });
-  };
-
-  const days = ["일", "월", "화", "수", "목", "금", "토"];
-  const emojis = ["😐", "😐", "😐", "😠", "😐", "😐", "⚪"];
-
-  return (
-
-    <Container>
-      <TopSection>
-        <Header isBack={false} title="나의 식재료 보유 현황" />
-        <DateSelector>
-          {getLast7Days().map((date, index) => (
-            <DateItem
-              key={index}
-              onClick={() => handleDateClick(date)}
-              $isSelected={date.toDateString() === selectedDate.toDateString()}
-            >
-              <DayText $isSelected={date.toDateString() === selectedDate.toDateString()}>
-                {days[date.getDay()]}
-              </DayText>
-              <DateText>{date.getDate().toString().padStart(2, "0")}</DateText>
-              <Emoji>{emojis[index]}</Emoji>
-            </DateItem>
-          ))}
-        </DateSelector>
-      </TopSection>
-
-      <BottomSection>
-      <ChatbotBtn />
-        <EditBtn>
-          <img src={pencil} onClick={() => navigate("/edit")} />
-        </EditBtn>
-
-        <ListWrapper>
-          <List isEditing={false} isDeletable={false} list={list} isIconEditable={false} />
-        </ListWrapper>
-
-        <Footer>
-          <UnderLinedBtn text="로그아웃" onClick={handleLogout} />
-        </Footer>
-
-        <FloatingBtn>
-          <CreateBtn />
-        </FloatingBtn>
-
-        <NavBar />
-      </BottomSection>
-    </Container>
-  );
-};
-
-export default Main;
-
-// ✅ 스타일 코드
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-`;
-
-const TopSection = styled.div`
-  background-color: white;
-  width: 100%;
-  max-width: 450px;
-  padding: 20px 0;
-  text-align: center;
-`;
-
-const BottomSection = styled.div`
-  background-color: #fdf4dc;
-  flex: 1;
-  width: 100%;
-  max-width: 375px; 
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const DateSelector = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 15px;  
-  margin-top: 10px;
-`;
-
-interface DateItemProps {
-  $isSelected: boolean;
-}
-
-const DateItem = styled.div<DateItemProps>`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 6px;
-  border-radius: 20px;
-  background-color: ${(props) => (props.$isSelected ? "#FDE4DA" : "transparent")};
-  cursor: pointer;
-`;
-
-const DayText = styled.div<DateItemProps>`
-  font-size: 12px;
-  color: ${(props) => (props.$isSelected ? "#333" : "#ccc")};
-  font-weight: ${(props) => (props.$isSelected ? "bold" : "normal")};
-`;
-
-const DateText = styled.div`
-  font-size: 14px;
-  font-weight: bold;
-`;
-
-const Emoji = styled.div`
-  font-size: 24px;
-  margin-top: 5px;
-`;
-
-const EditBtn = styled.div`
-  display: flex;
-  justify-content: end;
-  width: 90%;
-  margin: 11.5px auto 15.5px;
-  
-  img {
-    width: 30px;
-    height: 26.4px;
-    flex-shrink: 0;
-  }
-`;
-
-const Footer = styled.div`
-  position: fixed;
-  top: 40px;
-  right: 30px;
-  color: var(--grey2);
-`;
-
-const FloatingBtn = styled.div`
-  width: 90%;
-  max-width: 375px;
-  position: fixed;
-  bottom: 70px;
-  padding: 0 10px 0 0;
-  display: flex;
-  justify-content: end;
-`;
-
-const ListWrapper = styled.div`
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 375px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-`; */
+*/

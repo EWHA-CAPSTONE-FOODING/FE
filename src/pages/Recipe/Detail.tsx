@@ -22,11 +22,11 @@ const Detail = () => {
       total: 5300,
       createdAt: "2025-04-13",
       ingredients: [
-        { name: "링귀니 파스타", amount: 1, price: 7300 },
-        {name: "양파", amount: 1, price: 3300 },
-        {name: "올리브", amount: 15, price: 10400 },
-        {name: "양송이 버섯", amount: 1, price: 0 },
-        {name: "한살림 스파게티소스", amount: 1, price: 0 },
+        { name: "링귀니 파스타", amount: 1, price: 7300, iconId: 21},
+        {name: "양파", amount: 1, price: 3300, iconId: 3 },
+        {name: "올리브", amount: 15, price: 10400, iconId: 17 },
+        {name: "양송이 버섯", amount: 1, price: 0, iconId: 10 },
+        {name: "한살림 스파게티소스", amount: 1, price: 0, iconId: 16 },
       ],
       instructions: [
         "양파 0.5개(종이컵 0.5컵), 올리브 15개(종이컵 1컵)를 다져서 팬에 넣어주세요.",
