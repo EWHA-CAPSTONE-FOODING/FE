@@ -55,7 +55,7 @@ const Recipe = ({ recipe, isHistory }: Props) => {
           }}
         >
           <div className="name">
-            <FontMedium size="14px">{name}</FontMedium>
+            <FontMedium size="13px">{name}</FontMedium>
           </div>
           {!isHistory ? (
             <div className="gray">

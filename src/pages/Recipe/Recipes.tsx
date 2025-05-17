@@ -27,9 +27,9 @@ const Recipes = () => {
     const mockRecipes: TypeRecipe[] = [
       {
         recipeId: 1,
-        name: "토마토 오일 파스타",
+        name: "올리브 토마토 파스타",
         image: tomatopasta,
-        mainIng: "토마토",
+        mainIng: "토마토, 올리브, 파스타면, 버섯",
         heart: false,
 
         instructions: [
@@ -56,7 +56,7 @@ const Recipes = () => {
         recipeId: 3,
         name: "가지토마토 파스타",
         image: tomatoeggplant, 
-        mainIng: "토마토, 계란, 대파",
+        mainIng: "토마토, 계란, 대파, 파스타면",
         heart: false,
         instructions: [
           "토마토와 대파를 볶는다.",
