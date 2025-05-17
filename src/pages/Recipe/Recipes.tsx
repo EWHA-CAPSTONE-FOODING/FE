@@ -146,7 +146,7 @@ const Recipes = () => {
   return (
     <Container>
       <TopWhiteSection>
-        <Header isBack={false} title="p2" />
+        <Header isBack={false} title=" " />
 
         <ContentPadding>
           <IntroBlock>

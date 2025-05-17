@@ -36,7 +36,7 @@ const Fridge = () => {
   return (
     <Container>
       <TopWhiteSection>
-        <Header isBack={false} title="p3" />
+        <Header isBack={false} title=" " />
       </TopWhiteSection>
 
       <ScrollArea>

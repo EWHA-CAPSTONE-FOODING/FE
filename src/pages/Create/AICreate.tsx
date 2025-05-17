@@ -49,20 +49,20 @@ const AICreate = ({ isOCR }: Props) => {
   
         // ✅ MOCK 데이터: 백엔드 연동 전 테스트용
         const mockOCR: TypeIngredient[] = [
-          { ingredientId: Math.random(), iconId: 1, name: "P 굿모닝 우유 900ML", price: 1350, amount: 1 },
-          { ingredientId: Math.random(), iconId: 1, name: "P 양파", price: 3300, amount: 1 },
-          { ingredientId: Math.random(), iconId: 1, name: "P 무", price: 500, amount: 1 },
-          { ingredientId: Math.random(), iconId: 1, name: "P 깻잎", price: 750, amount: 1 },
+          { ingredientId: Math.random(), iconId: 13, name: "P 굿모닝 우유 900ML", price: 1350, amount: 1 },
+          { ingredientId: Math.random(), iconId: 3, name: "P 양파", price: 3300, amount: 1 },
+          { ingredientId: Math.random(), iconId: 26, name: "P 무", price: 500, amount: 1 },
+          { ingredientId: Math.random(), iconId: 25, name: "P 깻잎", price: 750, amount: 1 },
           { ingredientId: Math.random(), iconId: 1, name: "P 하선정 바로먹기좋은장아찌", price: 1380, amount: 1 },
-          { ingredientId: Math.random(), iconId: 1, name: "P 브로커리", price: 1280, amount: 1 },
+          { ingredientId: Math.random(), iconId: 18, name: "P 브로커리", price: 1280, amount: 1 },
         ];
   
         const mockObjectDetection: TypeIngredient[] = [
-          { ingredientId: Math.random(), iconId: 1, name: "양송이버섯 140g", price: 0, amount: 1 },
-          { ingredientId: Math.random(), iconId: 1, name: "한살림 스파게티소스 180g", price: 0, amount: 1 },
-          { ingredientId: Math.random(), iconId: 1, name: "참 귀한 한살림채소 가지 2개", price: 0, amount: 1 },
-          { ingredientId: Math.random(), iconId: 1, name: "방울토마토(500g)", price: 0, amount: 1 },
-          { ingredientId: Math.random(), iconId: 1, name: "한살림 두부면", price: 0, amount: 1 },
+          { ingredientId: Math.random(), iconId: 10, name: "양송이버섯 140g", price: 0, amount: 1 },
+          { ingredientId: Math.random(), iconId: 16, name: "한살림 스파게티소스 180g", price: 0, amount: 1 },
+          { ingredientId: Math.random(), iconId: 11, name: "참 귀한 한살림채소 가지 2개", price: 0, amount: 1 },
+          { ingredientId: Math.random(), iconId: 12, name: "방울토마토", price: 0, amount: 1 },
+          { ingredientId: Math.random(), iconId: 21, name: "한살림 두부면", price: 0, amount: 1 },
         ];
   
         // 👇 isOCR 여부에 따라 다른 mock 적용
@@ -111,7 +111,7 @@ const AICreate = ({ isOCR }: Props) => {
     <Div>
       <Header
         isBack={true}
-        title={isOCR ? "식재료 등록 - 텍스트 인식" : "식재료 등록 - 객체 인식"}
+        title={isOCR ? " " : " "}
       />
 
       {!previewImg ? (
@@ -120,7 +120,7 @@ const AICreate = ({ isOCR }: Props) => {
             {isOCR ? <img src={example} /> : <img src={example2} />}
           </Container>
           <div className="eg-text">
-            <FontMedium size="12px">*예시 이미지</FontMedium>
+            <FontMedium size="10px">*예시 이미지</FontMedium>
           </div>
         </Example>
       ) : (
@@ -134,7 +134,7 @@ const AICreate = ({ isOCR }: Props) => {
       {!previewImg ? (
         <>
           <div className="explanation">
-            <FontMedium size="14px" style={{ textAlign: "start", color: "#7d7d7d" }}>
+            <FontMedium size="13px" style={{ textAlign: "start", color: "#7d7d7d" }}>
               {isOCR ? (
                 <>
                   영수증이나 주문내역 이미지를 업로드 해주세요

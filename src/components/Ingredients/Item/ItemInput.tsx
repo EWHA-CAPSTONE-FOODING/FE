@@ -210,7 +210,8 @@ const Detail = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 2px;
+  gap: 10px;
+  
 
   input {
     border: none;
@@ -222,6 +223,7 @@ const Detail = styled.div`
   .price {
     width: 90%;
     color: var(--grey2);
+
 
     font-size: 12px;
     font-style: normal;
@@ -236,6 +238,7 @@ const Detail = styled.div`
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    margin-top: 4px;
   }
 `;
 

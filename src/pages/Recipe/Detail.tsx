@@ -17,24 +17,24 @@ const Detail = () => {
       recipeId: Number(id),
       name: "올리브 토마토 파스타",
       image: tomatooilpasta,
-      mainIng: "토마토, 파스타면, 올리브",
+      mainIng: "토마토, 파스타면, 올리브, 버섯",
       heart: false,
       total: 5300,
       createdAt: "2025-04-13",
       ingredients: [
-        { name: "링귀니 파스타 1인분(120g)", amount: 1, price: 7300 },
-        {name: "양파", amount: 0.5, price: 3500 },
+        { name: "링귀니 파스타", amount: 1, price: 7300 },
+        {name: "양파", amount: 1, price: 3300 },
         {name: "올리브", amount: 15, price: 10400 },
-        {name: "파마산치즈", amount: 1, price: 7500 },
-        {name: "토마토홀 1캔(400g)", amount: 1, price: 5140 },
+        {name: "양송이 버섯", amount: 1, price: 0 },
+        {name: "한살림 스파게티소스", amount: 1, price: 0 },
       ],
       instructions: [
         "양파 0.5개(종이컵 0.5컵), 올리브 15개(종이컵 1컵)를 다져서 팬에 넣어주세요.",
         "링귀니 파스타, 버터를 차례로 투하해주세요.",
-        "토마토홀 1캔과 물 600ml를 팬에 넣어주세요.",
+        "스파게티소스와 물 600ml를 팬에 넣어주세요.",
         "설탕2T, 참치액1T을 넣고 졸여주세요.",
         "팬에 바닥이 보이기 시작하면 불을 꺼주고, 다진마늘 1/3스푼을 넣어주세요.",
-        "바질과 파마산치즈가루까지 넣어주면 완벽한 올리브 토마토 파스타 완성!"
+        "양송이 버섯까지 넣어주면 완벽한 올리브 토마토 파스타 완성!"
       ],
       advantage: ["요리하기 용이", "1인 가구 인기 메뉴", "담백깔끔 건강에 좋음"],
     };
