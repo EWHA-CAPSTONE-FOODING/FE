@@ -125,8 +125,8 @@ const Div = styled.div`
   width: 90%;
   max-width: 315px;
   height: 40px;
-  border-radius: 12px;
-  background: rgb(255, 198, 65);
+  border-radius: 10px;
+  background: #FFD880;
   padding: 8px 12px;
   display: flex;
   align-items: center;

@@ -111,7 +111,7 @@ const Div = styled.div`
   box-sizing: border-box;
   height: 70px;
   flex-shrink: 0;
-  border-radius: 6px;
+  border-radius: 10px;
   background: #FFD880;
   box-sizing: border-box;
   padding: 13px 9px 13px 13px;

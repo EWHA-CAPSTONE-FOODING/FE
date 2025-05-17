@@ -10,6 +10,15 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { TypeRecipe } from "type/recipe";
 import tomatopasta from "@assets/recipe/tomatopasta.png";
+import eggtomato from "@assets/recipe/eggtomato.jpeg";
+import tunamayo from "@assets/recipe/tunamayo.jpg";
+import tunapasta from "@assets/recipe/tunapasta.jpg";
+import soysaucetofu from "@assets/recipe/soysaucetofu.jpg";
+import ddeukkguk from "@assets/recipe/ddeukkguk.jpg";
+import soysauceddeok from "@assets/recipe/soysauceddeok.jpg";
+import tomatoeggplant from "@assets/recipe/tomatoeggplant.jpg";
+import mapatofu from "@assets/recipe/mapatofu.jpg";
+
 
 
 const Recipes = () => {
@@ -18,7 +27,7 @@ const Recipes = () => {
     const mockRecipes: TypeRecipe[] = [
       {
         recipeId: 1,
-        name: "토마토 파스타",
+        name: "토마토 오일 파스타",
         image: tomatopasta,
         mainIng: "토마토",
         heart: false,
@@ -28,62 +37,12 @@ const Recipes = () => {
           "파스타면을 삶는다.",
           "소금 간을 맞춘다.",
         ],
-        advantage: ["건강에 좋음", "요리하기 쉬움", "1인 가구 추천"],
- 
+        advantage: ["건강에 좋음", "요리하기 쉬움", "1인 가구 추천"]
       },
       {
         recipeId: 2,
-        name: "된장찌개",
-        image: tomatopasta, // 임시 이미지
-        mainIng: "된장, 두부, 애호박",
-        heart: false,
-        instructions: ["된장을 푼다", "재료를 넣고 끓인다"],
-        advantage: ["영양 가득", "국물요리"],
-      },
-      {
-        recipeId: 3,
-        name: "카레",
-        image: tomatopasta,
-        mainIng: "카레가루, 감자, 당근",
-        heart: false,
-        instructions: ["재료를 볶는다", "카레가루와 물을 넣는다"],
-        advantage: ["한끼 뚝딱", "남녀노소 인기"],
-      },
-      {
-        recipeId: 4,
-        name: "참치마요 파스타",
-        image: tomatopasta,
-        mainIng: "참치, 마요네즈, 파스타면",
-        heart: false,
-        instructions: ["파스타면을 삶는다", "참치와 마요를 섞는다"],
-        advantage: ["간단한 조리", "풍부한 단백질"],
-      },
-      {
-        recipeId: 5,
-        name: "떡국",
-        image: tomatopasta,
-        mainIng: "떡, 계란, 대파",
-        heart: false,
-        instructions: ["떡을 끓인다", "계란을 넣고 마무리"],
-        advantage: ["든든한 국물", "명절 분위기"],
-      },
-      {
-        recipeId: 6,
-        name: "김치볶음밥",
-        image: tomatopasta, // 임시 이미지
-        mainIng: "김치, 밥, 참치, 계란",
-        heart: false,
-        instructions: [
-          "김치를 볶는다.",
-          "밥과 참치를 넣고 섞는다.",
-          "계란 프라이를 곁들인다.",
-        ],
-        advantage: ["재료 소진에 좋아요", "한 그릇 요리", "참치 재활용 가능"],
-      },
-      {
-        recipeId: 7,
-        name: "계란 토마토볶음",
-        image: tomatopasta, // 임시 이미지
+        name: "토마토 달걀 볶음",
+        image: eggtomato, 
         mainIng: "토마토, 계란, 대파",
         heart: false,
         instructions: [
@@ -94,10 +53,45 @@ const Recipes = () => {
         advantage: ["간단한 중국식 가정식", "토마토 재활용", "조리시간 짧음"],
       },
       {
-        recipeId: 8,
-        name: "두부 된장덮밥",
-        image: tomatopasta, // 임시 이미지
-        mainIng: "두부, 된장, 양파",
+        recipeId: 3,
+        name: "가지토마토 파스타",
+        image: tomatoeggplant, 
+        mainIng: "토마토, 계란, 대파",
+        heart: false,
+        instructions: [
+          "토마토와 대파를 볶는다.",
+          "계란을 풀어 넣고 재빨리 볶는다.",
+          "소금 간을 한다.",
+        ],
+        advantage: ["간단한 중국식 가정식", "토마토 재활용", "조리시간 짧음"],
+      },
+      {
+        recipeId: 4,
+        name: "참치마요 덮밥",
+        image: tunamayo, 
+        mainIng: "참치, 마요네즈",
+        heart: false,
+        instructions: [
+          "참치의 기름을 살짝 제거하고 그릇에 담는다.",
+          "마요네즈, 간장, 후추를 섞어 참치와 버무린다.",
+          "따뜻한 밥 위에 얹고 김가루, 쪽파를 올린다.",
+        ],
+        advantage: ["초간단", "조리도구 최소", "든든한 한 끼"],
+      },
+      {
+        recipeId: 5,
+        name: "참치 파스타",
+        image: tunapasta,
+        mainIng: "참치, 파스타면, 대파",
+        heart: false,
+        instructions: ["파스타면을 삶는다", "참치와 마요를 섞는다"],
+        advantage: ["간단한 조리", "풍부한 단백질"],
+      },
+      {
+        recipeId: 6,
+        name: "간장두부 덮밥",
+        image: soysaucetofu, 
+        mainIng: "두부, 버섯, 양파, 대파, 간장",
         heart: false,
         instructions: [
           "두부와 양파를 볶는다.",
@@ -107,18 +101,36 @@ const Recipes = () => {
         advantage: ["국 없이 덮밥 완성", "된장 재활용", "고단백 저칼로리"],
       },
       {
-        recipeId: 9,
-        name: "토마토 달걀국",
-        image: tomatopasta, // 임시 이미지
-        mainIng: "토마토, 계란, 대파",
+        recipeId: 7,
+        name: "마파두부",
+        image: mapatofu, 
+        mainIng: "두부, 버섯, 양파, 대파",
         heart: false,
         instructions: [
-          "토마토를 썰어 기름에 살짝 볶는다.",
-          "물과 대파를 넣고 끓인다.",
-          "계란을 풀어 넣고 젓지 않고 익힌다.",
-          "간을 맞춘다.",
+          "두부와 양파를 볶는다.",
+          "된장을 푼 물을 넣고 끓인다.",
+          "밥 위에 덮어 먹는다.",
         ],
-        advantage: ["속이 편한 국", "재료 간단", "10분 완성"],
+        advantage: ["국 없이 덮밥 완성", "된장 재활용", "고단백 저칼로리"],
+      },
+     
+      {
+        recipeId: 8,
+        name: "떡국",
+        image: ddeukkguk,
+        mainIng: "떡, 계란, 대파",
+        heart: false,
+        instructions: ["떡을 끓인다", "계란을 넣고 마무리"],
+        advantage: ["든든한 국물", "명절 분위기"],
+      },
+      {
+        recipeId: 9,
+        name: "간장떡볶이",
+        image: soysauceddeok,
+        mainIng: "떡, 어묵, 대파",
+        heart: false,
+        instructions: ["재료를 볶는다", "카레가루와 물을 넣는다"],
+        advantage: ["한끼 뚝딱", "남녀노소 인기"],
       }
 
 
