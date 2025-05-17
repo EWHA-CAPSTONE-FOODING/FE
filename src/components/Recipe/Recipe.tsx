@@ -90,6 +90,7 @@ const Recipe = ({ recipe, isHistory }: Props) => {
         <img
           className="arrow"
           src={arrow}
+          style={{ display: "none" }} // ✅ 눈에 안 보이게
           onClick={() => {
             !isHistory
               ? navigate(`/recipes/${recipeId}`)
@@ -104,12 +105,14 @@ const Recipe = ({ recipe, isHistory }: Props) => {
 export default Recipe;
 
 const Div = styled.div`
-  width: 90%;
+  width: 100%;
+  max-width: 375px;
+  margin: 0 auto;  
   box-sizing: border-box;
-  height: 81px;
+  height: 70px;
   flex-shrink: 0;
   border-radius: 6px;
-  background: var(--grey1);
+  background: #FFD880;
   box-sizing: border-box;
   padding: 13px 9px 13px 13px;
   display: flex;
@@ -121,6 +124,7 @@ const Div = styled.div`
     width: 90%;
     display: flex;
     gap: 15px;
+    align-items: center; /* ✅ 이 줄 추가 */
   }
 `;
 
@@ -140,7 +144,9 @@ const Detail = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 2px;
+  gap: 6px;
+  margin-top: 5px;
+  
 
   .gray {
     color: var(--grey2);
