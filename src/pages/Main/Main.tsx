@@ -50,7 +50,7 @@ const Container = styled.div`
   width: 100%;
   max-width: 375px;
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 110vh;
   background-color: #fdf4dc;
   display: flex;
   flex-direction: column;

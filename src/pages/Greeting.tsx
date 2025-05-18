@@ -11,7 +11,7 @@ const Greeting = () => {
       <Img src={logo} />
 
       <div className="bottom">
-        <LongBtn text={"시작하기"} onClick={() => navigate("/main")} />
+        <LongBtn text={"시작하기"} onClick={() => navigate("/statistics")} />
       </div>
     </Div>
   );
