@@ -137,7 +137,7 @@ const Div = styled.div`
   margin: 0 auto;
   position: relative;
   background-color: #fdf4dc;
-  min-height: 100vh;
+  height: 100vh;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
