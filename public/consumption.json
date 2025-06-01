@@ -1,0 +1,245 @@
+[
+  {
+    "date": "2025-01-09",
+    "ingredient": "계란",
+    "amount": 3
+  },
+  {
+    "date": "2025-01-30",
+    "ingredient": "계란",
+    "amount": 3
+  },
+  {
+    "date": "2025-02-11",
+    "ingredient": "계란",
+    "amount": 4
+  },
+  {
+    "date": "2025-02-18",
+    "ingredient": "계란",
+    "amount": 4
+  },
+  {
+    "date": "2025-02-28",
+    "ingredient": "계란",
+    "amount": 1
+  },
+  {
+    "date": "2025-03-13",
+    "ingredient": "계란",
+    "amount": 2
+  },
+  {
+    "date": "2025-03-20",
+    "ingredient": "계란",
+    "amount": 1
+  },
+  {
+    "date": "2025-03-31",
+    "ingredient": "계란",
+    "amount": 3
+  },
+  {
+    "date": "2025-04-12",
+    "ingredient": "계란",
+    "amount": 1
+  },
+  {
+    "date": "2025-04-22",
+    "ingredient": "계란",
+    "amount": 3
+  },
+  {
+    "date": "2025-05-02",
+    "ingredient": "계란",
+    "amount": 2
+  },
+  {
+    "date": "2025-05-13",
+    "ingredient": "계란",
+    "amount": 3
+  },
+  {
+    "date": "2025-05-18",
+    "ingredient": "계란",
+    "amount": 2
+  },
+  {
+    "date": "2025-06-02",
+    "ingredient": "계란",
+    "amount": 3
+  },
+  
+  {
+    "date": "2025-01-16",
+    "ingredient": "당근",
+    "amount": 1
+  },
+  {
+    "date": "2025-01-27",
+    "ingredient": "당근",
+    "amount": 1
+  },
+  {
+    "date": "2025-01-30",
+    "ingredient": "당근",
+    "amount": 4
+  },
+  {
+    "date": "2025-02-10",
+    "ingredient": "당근",
+    "amount": 3
+  },
+  {
+    "date": "2025-02-28",
+    "ingredient": "당근",
+    "amount": 2
+  },
+  {
+    "date": "2025-03-12",
+    "ingredient": "당근",
+    "amount": 1
+  },
+  {
+    "date": "2025-04-07",
+    "ingredient": "당근",
+    "amount": 2
+  },
+  {
+    "date": "2025-04-22",
+    "ingredient": "당근",
+    "amount": 3
+  },
+  {
+    "date": "2025-05-09",
+    "ingredient": "당근",
+    "amount": 3
+  },
+  {
+    "date": "2025-05-20",
+    "ingredient": "당근",
+    "amount": 4
+  },
+  
+  {
+    "date": "2025-02-13",
+    "ingredient": "양파",
+    "amount": 3
+  },
+  {
+    "date": "2025-03-28",
+    "ingredient": "양파",
+    "amount": 1
+  },
+  {
+    "date": "2025-04-15",
+    "ingredient": "양파",
+    "amount": 3
+  },
+  {
+    "date": "2025-05-08",
+    "ingredient": "양파",
+    "amount": 5
+  },
+  {
+    "date": "2025-05-26",
+    "ingredient": "양파",
+    "amount": 2
+  },
+  
+  {
+    "date": "2025-01-02",
+    "ingredient": "우유",
+    "amount": 3
+  },
+  {
+    "date": "2025-01-15",
+    "ingredient": "우유",
+    "amount": 3
+  },
+  {
+    "date": "2025-01-21",
+    "ingredient": "우유",
+    "amount": 2
+  },
+  {
+    "date": "2025-01-30",
+    "ingredient": "우유",
+    "amount": 1
+  },
+  {
+    "date": "2025-02-07",
+    "ingredient": "우유",
+    "amount": 1
+  },
+  {
+    "date": "2025-02-12",
+    "ingredient": "우유",
+    "amount": 1
+  },
+  {
+    "date": "2025-02-20",
+    "ingredient": "우유",
+    "amount": 2
+  },
+  {
+    "date": "2025-02-26",
+    "ingredient": "우유",
+    "amount": 4
+  },
+  {
+    "date": "2025-03-13",
+    "ingredient": "우유",
+    "amount": 3
+  },
+  {
+    "date": "2025-03-18",
+    "ingredient": "우유",
+    "amount": 2
+  },
+  {
+    "date": "2025-03-28",
+    "ingredient": "우유",
+    "amount": 2
+  },
+  {
+    "date": "2025-04-01",
+    "ingredient": "우유",
+    "amount": 2
+  },
+  {
+    "date": "2025-04-08",
+    "ingredient": "우유",
+    "amount": 1
+  },
+  {
+    "date": "2025-04-15",
+    "ingredient": "우유",
+    "amount": 5
+  },
+  {
+    "date": "2025-05-02",
+    "ingredient": "우유",
+    "amount": 1
+  },
+  {
+    "date": "2025-05-09",
+    "ingredient": "우유",
+    "amount": 3
+  },
+  {
+    "date": "2025-05-16",
+    "ingredient": "우유",
+    "amount": 1
+  },
+  {
+    "date": "2025-05-19",
+    "ingredient": "우유",
+    "amount": 2
+  },
+  {
+    "date": "2025-05-28",
+    "ingredient": "우유",
+    "amount": 2
+  }
+]
