@@ -232,14 +232,14 @@ const CardSection = styled.div`
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 13px;
   padding: 16px;
 `;
 
 const Card = styled.div`
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
   background: white;
   border-radius: 12px;
   padding: 8px;

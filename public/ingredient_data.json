@@ -1,0 +1,7 @@
+[
+  { "name": "한우 등심", "amount": 1, "price": 42500 },
+  { "name": "오렌지", "amount": 3, "price": 12000 },
+  { "name": "계란", "amount": 12, "price": 8750 },
+  { "name": "파스타", "amount": 1, "price": 6290 },
+  { "name": "훈제오리", "amount": 0.5, "price": 4500 }
+]
