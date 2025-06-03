@@ -47,7 +47,7 @@ const Drawer = ({ detail, recipeId }: Props) => {
         {/* 📌 주요 재료 */}
         <div className="main-ingredients">
           <FontBold size="14px">주요 재료</FontBold>
-          <FontMedium size="14px">{mainIng}</FontMedium>
+          <FontMedium size="13px">{mainIng}</FontMedium>
         </div>
 
         {/* 📌 내가 가진 재료 */}
@@ -69,7 +69,7 @@ const Drawer = ({ detail, recipeId }: Props) => {
             <ul className="list">
               {instructions.map((step, idx) => (
                 <li key={idx}>
-                  <FontMedium size="14px">{step}</FontMedium>
+                  <FontMedium size="12px">{step}</FontMedium>
                   </li>
                 ))}
                 </ul>
@@ -84,7 +84,7 @@ const Drawer = ({ detail, recipeId }: Props) => {
             <ul className="list">
               {advantage.map((item, idx) => (
                 <li key={idx}>
-                  <FontMedium size="14px">{item}</FontMedium>
+                  <FontMedium size="13px">{item}</FontMedium>
                   </li>
                 ))}
                 </ul>

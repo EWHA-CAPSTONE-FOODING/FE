@@ -112,7 +112,7 @@ const Div = styled.div`
   height: 70px;
   flex-shrink: 0;
   border-radius: 10px;
-  background: #FFD880;
+  background: #ffe3b3;
   box-sizing: border-box;
   padding: 13px 9px 13px 13px;
   display: flex;

@@ -258,12 +258,12 @@ const Card = styled.div`
     gap: 4px;
 
     h4 {
-      font-size: 14px;
+      font-size: 13px;
       margin: 0;
     }
 
     p {
-      font-size: 12px;
+      font-size: 11.5px;
       margin: 0;
       color: #555;
     }

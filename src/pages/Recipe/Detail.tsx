@@ -57,7 +57,7 @@ export default Detail;
 const Div = styled.div`
   width: 100%;
   max-width: 375px;
-  background-color:rgb(255, 198, 65);
+  background-color:#ffe3b3;
   margin: 0 auto; /* ✅ 중앙 정렬 핵심 */
   min-height: 100vh; /* ✅ 배경 꽉 차게 */
   
