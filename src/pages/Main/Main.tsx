@@ -94,7 +94,7 @@ const Main = () => {
       </HeaderWrapper>
 
       <IntroBlock>
-        <FontMedium size="16px">김이화 님의 주간 레포트</FontMedium>
+        <FontMedium size="16px">문이현 님의 주간 레포트</FontMedium>
         <FontMedium size="12px" className="grey">
           기간: 2025.05.26 ~ 2025.06.01
         </FontMedium>
@@ -167,7 +167,7 @@ const Container = styled.div`
   width: 100%;
   max-width: 375px;
   margin: 0 auto;
-  min-height: 128vh;
+  min-height: 130vh;
   background-color: #fdf4dc;
   display: flex;
   flex-direction: column;
@@ -198,6 +198,7 @@ const Content = styled.div`
   flex-direction: column;
   gap: 12px; // ✅ 모든 섹션 간격 동일하게
   overflow-y: auto; // ✅ 스크롤 가능
+  padding-bottom: 80px;
 `;
 
 const Total = styled.p`

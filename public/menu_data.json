@@ -4,27 +4,27 @@
     "count": 2,
     "price": 4190,
     "date": "2025.06.01",
-    "image": "/images/계란찜.png"
+    "image": "/images/1.png"
   },
   {
     "name": "한우 스테이크",
     "count": 1,
     "price": 52350,
     "date": "2025.05.29",
-    "image": "/images/한우스테이크.png"
+    "image": "/images/3.png"
   },
   {
     "name": "알리오올리오",
     "count": 1,
     "price": 7190,
     "date": "2025.05.27",
-    "image": "/images/알리오올리오.png"
+    "image": "/images/2.png"
   },
   {
     "name": "오리찜",
     "count": 1,
     "price": 5500,
     "date": "2025.05.26",
-    "image": "/images/오리찜.png"
+    "image": "/images/4.png"
   }
 ]
