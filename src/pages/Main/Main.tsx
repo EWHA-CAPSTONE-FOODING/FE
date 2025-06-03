@@ -1,10 +1,9 @@
-
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Header from "@components/Header/Header";
 import NavBar from "@components/NavBar/NavBar";
 import { FontMedium } from "@style/font.style";
-import { Bar, Doughnut } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -12,25 +11,16 @@ import {
   BarElement,
   Title as ChartTitle,
   Tooltip,
-  Legend,
-  ArcElement
+  Legend
 } from "chart.js";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  ChartTitle,
-  Tooltip,
-  Legend,
-  ArcElement
-);
+ChartJS.register(CategoryScale, LinearScale, BarElement, ChartTitle, Tooltip, Legend);
 
 const Main = () => {
   const [chartData, setChartData] = useState<any>(null);
   const [total, setTotal] = useState<number>(0);
   const [menuData, setMenuData] = useState<any[]>([]);
-  const [recData, setRecData] = useState<any>(null);
+  const [recommendData, setRecommendData] = useState<any[]>([]);
 
   // 소비 데이터
   useEffect(() => {
@@ -65,21 +55,11 @@ const Main = () => {
       .then((data) => setMenuData(data));
   }, []);
 
-  // AI 분석 데이터 (dummy)
+  // 추천 식재료 데이터
   useEffect(() => {
-    setRecData({
-      nutrients: [
-        { name: "탄수화물", percentage: 40 },
-        { name: "단백질", percentage: 30 },
-        { name: "지방", percentage: 20 },
-        { name: "비타민", percentage: 10 }
-      ],
-      recommendations: [
-        "이번주에는 비타민 섭취가 부족해보이네요. 비타민이 풍부한 오렌지, 귤, 토마토를 간식으로 섭취해보세요!",
-        "채소 섭취량이 다소 낮은 편으로 보이네요. 반찬으로 샐러드, 나물 반찬을 곁들여보세요!",
-        "탄수화물 비율이 높아요. 좀 더 균형잡힌 식사를 해보세요!"
-      ]
-    });
+    fetch("/recs.json")
+      .then((res) => res.json())
+      .then((data) => setRecommendData(data));
   }, []);
 
   const chartOptions = {
@@ -87,7 +67,7 @@ const Main = () => {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
-      legend: { display: false }, // ✅ 그래프 위 범례 제거!
+      legend: { display: false },
       tooltip: {
         callbacks: {
           label: (context: any) => `${context.parsed.x.toLocaleString()}원`
@@ -107,35 +87,21 @@ const Main = () => {
     }
   };
 
-  const doughnutData = recData && {
-    labels: recData.nutrients.map((n: any) => n.name),
-    datasets: [
-      {
-        data: recData.nutrients.map((n: any) => n.percentage),
-        backgroundColor: ["#FF6384", "#FFCE56", "#4BC0C0", "#9966FF"]
-      }
-    ]
-  };
-
   return (
     <Container>
       <HeaderWrapper>
         <Header isBack={false} title=" " />
       </HeaderWrapper>
 
-      <IntroBlockWrapper>
-        <IntroBlock>
-          <FontMedium size="16px">김이화 님의 주간 레포트</FontMedium>
-          <FontMedium size="12px" className="grey">
-            기간: 2025.05.26 ~ 2025.06.01
-          </FontMedium>
-         </IntroBlock>
-        </IntroBlockWrapper>
+      <IntroBlock>
+        <FontMedium size="16px">김이화 님의 주간 레포트</FontMedium>
+        <FontMedium size="12px" className="grey">
+          기간: 2025.05.26 ~ 2025.06.01
+        </FontMedium>
+      </IntroBlock>
 
       <Content>
-        <Total style={{ marginBottom: "4px" }}>
-          이번주 총 식재료 소비 금액은 <b>{total.toLocaleString()}원</b>이에요!
-        </Total>
+        <Total>이번주 총 식재료 소비 금액은 <b>{total.toLocaleString()}원</b>이에요!</Total>
 
         {chartData && (
           <ChartWrapper>
@@ -143,21 +109,18 @@ const Main = () => {
           </ChartWrapper>
         )}
 
-
         <MenuSection>
-          <MenuTitle>메뉴선택 내역 및 식습관 분석</MenuTitle>
-          <MenuSubTitle>
-            이번주 푸딩에서 선택하신 메뉴는 총 {menuData.length}가지네요!
-          </MenuSubTitle>
+          <SectionTitle>메뉴 선택 내역</SectionTitle>
+          <MenuSubTitle>이번주 푸딩에서 선택하신 메뉴는 총 {menuData.length}가지네요!</MenuSubTitle>
           <MenuList>
-            {menuData.map((menu, index) => (
-              <MenuCard key={index}>
+            {menuData.map((menu, idx) => (
+              <MenuCard key={idx}>
                 <img src={menu.image} alt={menu.name} />
                 <div className="info">
                   <div className="name">{menu.name}</div>
                   <div className="details">
-                    <div>조리 횟수 : {menu.count}</div>
-                    <div>소비 금액 : {menu.price.toLocaleString()}원</div>
+                    <div>조리 횟수: {menu.count}</div>
+                    <div>소비 금액: {menu.price.toLocaleString()}원</div>
                   </div>
                 </div>
                 <div className="date">{menu.date}</div>
@@ -166,35 +129,28 @@ const Main = () => {
           </MenuList>
         </MenuSection>
 
-
-        {recData && (
-          <MenuSection>
-            <MenuTitle> </MenuTitle>
-            <ChartSection>
-              <ChartWrapper style={{ width: "50%", height: "100px" }}>
-                <Doughnut data={doughnutData} options={{ plugins: { legend: { display: false } } }} />
-              </ChartWrapper>
-              <LegendList>
-                {recData.nutrients.map((n: any, idx: number) => (
-                  <li key={idx}>
-                    <span
-                      className="color-box"
-                      style={{ backgroundColor: ["#FF6384", "#FFCE56", "#4BC0C0", "#9966FF"][idx] }}
-                    />
-                    {n.name} ({n.percentage}%)
-                  </li>
+        <MenuSection>
+          <SectionTitle>AI 추천: 영양소 섭취를 위한 추천 식재료</SectionTitle>
+          <SubTitle>아래 식재료로 영양소를 골고루 섭취해보세요.</SubTitle>
+          <TableWrapper>
+            <table>
+              <thead>
+                <tr>
+                  <th>추천 식재료</th>
+                  <th>추천 이유</th>
+                </tr>
+              </thead>
+              <tbody>
+                {recommendData.map((rec, idx) => (
+                  <tr key={idx}>
+                    <td>{rec.ingredient}</td>
+                    <td>{rec.reason}</td>
+                  </tr>
                 ))}
-              </LegendList>
-            </ChartSection>
-
-
-            <RecommendationList>
-              {recData.recommendations.map((item: any, idx: number) => (
-                <li key={idx}>{item}</li>
-              ))}
-            </RecommendationList>
-          </MenuSection>
-        )}
+              </tbody>
+            </table>
+          </TableWrapper>
+        </MenuSection>
       </Content>
 
       <NavBarWrapper>
@@ -211,7 +167,7 @@ const Container = styled.div`
   width: 100%;
   max-width: 375px;
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 128vh;
   background-color: #fdf4dc;
   display: flex;
   flex-direction: column;
@@ -222,35 +178,26 @@ const HeaderWrapper = styled.div`
   padding-top: 16px;
 `;
 
-const IntroBlockWrapper = styled.div`
-display: flex;                // ✅ 가운데 정렬!
-justify-content: center;      // ✅ 가운데로!
-margin: 4px 20px 12px;
-`;
-
 const IntroBlock = styled.div`
-width: 375px;                  // ✅ 전체폭
-background-color: #FFDAB9;
-padding: 8px 12px;
-border-radius: 8px;
+  width: 100%;
+  background-color: #FFDAB9;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  box-sizing: border-box;
 
-display: flex;                // ✅ 내부 왼쪽 정렬
-flex-direction: column;
-align-items: flex-start;      // ✅ 왼쪽 정렬!
-
-.grey {
-  color: var(--grey2);
-}
+  .grey {
+    color: var(--grey2);
+  }
 `;
-
-
 
 const Content = styled.div`
   flex: 1;
   padding: 0 16px;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  gap: 12px; // ✅ 모든 섹션 간격 동일하게
+  overflow-y: auto; // ✅ 스크롤 가능
 `;
 
 const Total = styled.p`
@@ -261,17 +208,15 @@ const Total = styled.p`
 
 const ChartWrapper = styled.div`
   width: 100%;
-  margin: 4px auto 12px;
+  margin: 0 auto;
   height: 200px;
 `;
 
-const MenuSection = styled.div`
-  margin-top: 4px;
-`;
+const MenuSection = styled.div``;
 
-const MenuTitle = styled.h3`
+const SectionTitle = styled(FontMedium)`
   font-size: 16px;
-  margin: 0 0 4px;
+  text-align: left;
 `;
 
 const MenuSubTitle = styled.p`
@@ -305,11 +250,11 @@ const MenuCard = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 2px;
 
     .name {
-      font-weight: bold;
-      font-size: 11,5px;
+      font-size: 12px; // ✅ 김이화 주간레포트와 동일
+      font-weight: 500;
     }
 
     .details {
@@ -326,45 +271,34 @@ const MenuCard = styled.div`
   }
 `;
 
-const ChartSection = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 8px; // ✅ 그래프와 분석/조언 간격 최소화
+const SubTitle = styled.p`
+  font-size: 12px;
+  margin: 4px 0;
+  color: #555;
 `;
 
-const LegendList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  font-size: 12px;
-  color: #555;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+const TableWrapper = styled.div`
+  overflow-x: auto;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    
 
-  li {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
+    th, td {
+      font-size: 12px;
+      border: 1px solid #ffe3b3;
+      padding: 6px 8px;
+      word-break: keep-all;
+    }
+    
+    th:nth-child(1), td:nth-child(1) {
+      width: 30%; // ✅ 추천 식재료 열폭 약간 더 넓게
+    }
 
-  span.color-box {
-    width: 12px;
-    height: 12px;
-    border-radius: 2px;
-    display: inline-block;
-  }
-`;
-
-const RecommendationList = styled.ul`
-  font-size: 12px;
-  margin: 8px 0 0;
-  padding-left: 16px;
-  color: #555;
-
-  li {
-    margin-bottom: 4px;
+    th {
+      background-color: #ffe3b3;
+      text-align: left;
+    }
   }
 `;
 
