@@ -1,24 +1,27 @@
 # FOODING-frontend
 
-## frontend 이용 기능
-1. 이미지/영수증 인식 (YOLO + OCR)
-2. 메뉴 추천 (재고 기반 GPT 프롬프트 엔지니어링)
-3. 식재료 조언 (주간 소비 + 메뉴 분석 → GPT 기반 CSV 리포트)
-4. 구매 주기 예측 (RandomForest 머신러닝 모델)
 
 ## 폴더 구조
-- `OCR/`              : 영수증 OCR → 텍스트 추출 코드  
-- `YOLO_train_test/`  : YOLOv8 모델 학습/테스트 코드  
-- `YOLO_result/`      : 학습된 모델 결과 
-- `filtering/`        : 식재료 이미지 정제  
-- `menu_recomm/`      : 보유 재고 기준 메뉴 추천 모듈  
-- `ingredient_recomm/`: 주간 소비 분석 → 식재료 조언 모듈  
-- `purchase_prediction.ipynb`: 구매 주기 및 수량 예측 실험 코드
-- `web_crawling/`     : 식재료 이미지 크롤링 스크립트  
-- `my_flask_app/`     : Flask 서버
-- `영수증/`     : 영수증 샘플 이미지 폴더
+- src/assets: 이미지 파일  
+- src/components: UI 컴포넌트  
+- src/pages: 화면별 레이아웃  
+- src/router: 비로그인 유저 접근 제한 등의 라우팅 관련 코드  
+- src/services/api: api 요청 함수  
+- src/services/store: recoil 전역 상태 관리 함수  
+- src/style: 글로벌 스타일 및 ccs기본 
+- src/type: 오브젝트 별 타입 지정  
+
 
 ## How to Build
+- git clone으로 프로젝트 폴더를 로컬에 다운로드
+- 다운받은 폴더를 에디터에서 열고 npm install을 입력해 필요한 패캐지 설치
+- npm start로 로컬에서 프로젝트 실행
+
+
+## How to Install
+- 
+
+
 1. **OCR (영수증 텍스트 추출)**
 - 별도 빌드 필요 없음
 - API Key, 이미지 파일, 경로를 코드 상에서 직접 지정 필요
